@@ -1,0 +1,17 @@
+[package]
+name = "redo-of-healer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { version = "0.5.1", default-features = false, features = [
+    "macro",
+    "hooks",
+] }
+easer = "0.3.0"
+freya = { git = "https://github.com/Aiving/freya.git", branch = "feat/add-missing-gradient-functions", features = [
+    "devtools",
+] }
+material-colors = "0.3.3"
+once_cell = "1.19.0"
+skia-safe = { version = "0.75", features = ["gl", "textlayout", "svg"] }
