@@ -1634,6 +1634,7 @@ dependencies = [
 [[package]]
 name = "freya"
 version = "0.2.2"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "dioxus",
  "dioxus-core",
@@ -1657,6 +1658,7 @@ dependencies = [
 [[package]]
 name = "freya-common"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -1672,6 +1674,7 @@ dependencies = [
 [[package]]
 name = "freya-components"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "bytes",
  "dioxus",
@@ -1694,6 +1697,7 @@ dependencies = [
 [[package]]
 name = "freya-core"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "accesskit",
  "dioxus-core",
@@ -1715,6 +1719,7 @@ dependencies = [
 [[package]]
 name = "freya-devtools"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "dioxus",
  "dioxus-radio",
@@ -1734,6 +1739,7 @@ dependencies = [
 [[package]]
 name = "freya-elements"
 version = "0.2.0"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "dioxus-core",
  "dioxus-rsx",
@@ -1745,6 +1751,7 @@ dependencies = [
 [[package]]
 name = "freya-engine"
 version = "0.2.2"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "bitflags 2.6.0",
  "glutin",
@@ -1754,6 +1761,7 @@ dependencies = [
 [[package]]
 name = "freya-hooks"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "bitflags 2.6.0",
  "bytes",
@@ -1778,6 +1786,7 @@ dependencies = [
 [[package]]
 name = "freya-native-core"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "anymap",
  "dashmap",
@@ -1791,6 +1800,7 @@ dependencies = [
 [[package]]
 name = "freya-native-core-macro"
 version = "0.2.0"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "quote",
  "syn 2.0.68",
@@ -1799,6 +1809,7 @@ dependencies = [
 [[package]]
 name = "freya-node-state"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "accesskit",
  "bytes",
@@ -1818,6 +1829,7 @@ dependencies = [
 [[package]]
 name = "freya-renderer"
 version = "0.2.1"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -3788,7 +3800,6 @@ name = "redo-of-healer"
 version = "0.1.0"
 dependencies = [
  "dioxus",
- "easer",
  "freya",
  "material-colors",
  "once_cell",
@@ -4722,6 +4733,7 @@ dependencies = [
 [[package]]
 name = "torin"
 version = "0.2.0"
+source = "git+https://github.com/Aiving/freya.git?branch=feat/add-missing-gradient-functions#a3ced16ea972c69abd61ff65a33b11b456e017ca"
 dependencies = [
  "euclid",
  "freya-native-core",

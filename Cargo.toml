@@ -8,7 +8,6 @@ dioxus = { version = "0.5.1", default-features = false, features = [
     "macro",
     "hooks",
 ] }
-easer = "0.3.0"
 freya = { git = "https://github.com/Aiving/freya.git", branch = "feat/add-missing-gradient-functions", features = [
     "devtools",
 ] }
