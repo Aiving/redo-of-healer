@@ -1,4 +1,5 @@
 use material_colors::color::Argb;
+use freya::prelude::*;
 
 pub trait ColorConversion {
     fn to_rgb(&self) -> String;
@@ -12,30 +13,70 @@ impl ColorConversion for Argb {
     }
 
     fn to_rgba(&self) -> String {
-        format!("{}, {}, {}, {}", self.red, self.green, self.blue, self.alpha)
+        format!(
+            "{}, {}, {}, {}",
+            self.red, self.green, self.blue, self.alpha
+        )
     }
 
     fn to_color(&self) -> String {
-        format!("rgb({}, {}, {}, {})", self.red, self.green, self.blue, self.alpha)
+        format!(
+            "rgb({}, {}, {}, {})",
+            self.red, self.green, self.blue, self.alpha
+        )
     }
 }
 
-#[derive(Default, PartialEq, Eq, Clone)]
-pub struct Transition<T> {
-    pub from: T,
-    pub to: T,
+#[derive(Default, PartialEq, Eq)]
+pub struct Transition<S> {
+    pub from: S,
+    pub to: S,
 }
 
-impl<T: Clone> Transition<T> {
-    pub fn new(init: T) -> Self {
-        Self {
-            from: init.clone(),
-            to: init,
+impl<S> Transition<S> {
+    pub fn to(&mut self, value: S) {
+        self.from = std::mem::replace(&mut self.to, value);
+    }
+}
+
+#[derive(Default, Clone, PartialEq, Eq)]
+pub enum Direction {
+    #[default]
+    Horizontal,
+    Vertical,
+}
+
+#[component]
+pub fn WithSpacing<T: IntoIterator<Item = Element> + PartialEq + 'static>(
+    spacing: usize,
+    direction: Direction,
+    elements: T,
+) -> Element {
+    let elements = {
+        let mut temp = vec![];
+        let mut iterator = elements.into_iter().enumerate().peekable();
+
+        while let Some((index, element)) = iterator.next() {
+            let margin = match (iterator.peek(), &direction) {
+                (None, _) => 0.to_string(),
+                (_, Direction::Horizontal) => format!("0 {spacing} 0 0"),
+                (_, Direction::Vertical) => format!("0 0 {spacing} 0"),
+            };
+
+            temp.push((index, margin, element));
         }
-    }
 
-    pub fn to(&mut self, value: T) {
-        self.from = self.to.clone();
-        self.to = value;
+        temp
+    };
+
+    rsx! {
+        for (index, margin, element) in &elements {
+            rect {
+                key: "{index}",
+                margin: margin.as_str(),
+
+                {&element}
+            }
+        }
     }
 }

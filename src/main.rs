@@ -1,11 +1,13 @@
 #![warn(clippy::all, clippy::pedantic, clippy::nursery)]
 #![allow(
     clippy::too_many_lines,
+    clippy::too_many_arguments,
     clippy::module_name_repetitions,
     clippy::missing_panics_doc,
     clippy::unreadable_literal
 )]
 
+pub mod animation;
 pub mod fluent;
 pub mod material;
 pub mod util;
@@ -27,5 +29,5 @@ fn main() {
 
 #[component]
 fn App() -> Element {
-    fluent::gallery()
+    material::gallery()
 }

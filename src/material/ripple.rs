@@ -75,7 +75,7 @@ pub struct RippleProps {
 pub fn Ripple(props: RippleProps) -> Element {
     let (node_ref, size) = use_node_signal();
 
-    let mut state = use_signal(|| Transition::new(RippleState::default()));
+    let mut state = use_signal(Transition::<RippleState>::default);
     let mut info = use_signal(RippleInfo::default);
 
     let opacity_animations = use_animation(move |ctx| ctx.with(AnimNum::new(0.0, 1.0).time(450)));

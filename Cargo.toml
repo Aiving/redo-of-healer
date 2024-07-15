@@ -8,9 +8,10 @@ dioxus = { version = "0.5.1", default-features = false, features = [
     "macro",
     "hooks",
 ] }
-freya = { git = "https://github.com/Aiving/freya.git", branch = "feat/add-missing-gradient-functions", features = [
+freya = { git = "https://github.com/Aiving/freya.git", branch = "feat/rethink-parsing", features = [
     "devtools",
 ] }
+freya-node-state = { git = "https://github.com/Aiving/freya.git", branch = "feat/rethink-parsing" }
 material-colors = "0.3.3"
 once_cell = "1.19.0"
 skia-safe = { version = "0.75", features = ["gl", "textlayout", "svg"] }
