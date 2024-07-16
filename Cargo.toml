@@ -8,10 +8,10 @@ dioxus = { version = "0.5.1", default-features = false, features = [
     "macro",
     "hooks",
 ] }
-freya = { path = "https://github.com/Aiving/freya.git", branch = "feat/support-color-in-svg", features = [
+freya = { git = "https://github.com/Aiving/freya.git", branch = "feat/support-color-in-svg", features = [
     "devtools",
 ] }
-freya-node-state = { path = "https://github.com/Aiving/freya.git", branch = "feat/support-color-in-svg" }
+freya-node-state = { git = "https://github.com/Aiving/freya.git", branch = "feat/support-color-in-svg" }
 material-colors = "0.3.3"
 once_cell = "1.19.0"
 skia-safe = { version = "0.75", features = ["gl", "textlayout", "svg"] }
