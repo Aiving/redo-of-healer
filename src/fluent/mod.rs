@@ -98,7 +98,7 @@ pub fn Button(props: ButtonProps) -> Element {
 
     let kind = props.kind.unwrap_or_default();
 
-    let animation = animation::use_animation(move |ctx| {
+    let animation = animation::use_transition(move |ctx| {
         let (background, color, border) = state.read().as_color(kind);
 
         ctx.add_tween("background", background, Curve::LINEAR, 83);
@@ -223,7 +223,7 @@ pub fn Switch() -> Element {
 
     let mut enabled = use_signal(bool::default);
 
-    let animation = animation::use_animation(move |ctx| {
+    let animation = animation::use_transition(move |ctx| {
         let enabled = enabled();
         let rest = SwitchState::Rest.as_color(enabled);
 
@@ -233,7 +233,7 @@ pub fn Switch() -> Element {
         ctx.add_tween("Width", 12.0, Curve::LINEAR, 100);
     });
 
-    let offset_animation = animation::use_animation(move |ctx| {
+    let offset_animation = animation::use_transition(move |ctx| {
         ctx.add_tween("offset", 0.0, Curve::cubic(0.175, 0.885, 0.32, 1.275), 300);
     });
 
@@ -307,11 +307,11 @@ pub fn Switch() -> Element {
     };
 
     let (background, color, height, width, offset_x, border) = (
-        animation.get::<_, String>("background"),
-        animation.get::<_, String>("color"),
-        animation.get::<_, f32>("height"),
-        animation.get::<_, f32>("width"),
-        offset_animation.get::<_, f32>("offset"),
+        animation.get::<String>("background"),
+        animation.get::<String>("color"),
+        animation.get::<f32>("height"),
+        animation.get::<f32>("width"),
+        offset_animation.get::<f32>("offset"),
         state.read().to.as_color(enabled()).2,
     );
 

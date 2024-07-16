@@ -1,3 +1,5 @@
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 use material_colors::color::Argb;
 use freya::prelude::*;
 

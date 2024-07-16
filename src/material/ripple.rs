@@ -165,7 +165,7 @@ pub fn Ripple(props: RippleProps) -> Element {
             reference: node_ref,
 
             rect {
-                background: "radial-gradient(rgb({bg}, 0.5) 65%, transparent 100%)",
+                background: "rgb({bg}, 0.5)",
                 width: "{radius.read().as_f32()}",
                 height: "{radius.read().as_f32()}",
                 opacity: "{opacity.read().as_f32()}",

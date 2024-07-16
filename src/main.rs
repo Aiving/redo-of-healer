@@ -16,6 +16,21 @@ use freya::prelude::*;
 use material_colors::{color::Argb, scheme::Scheme, theme::ThemeBuilder as MaterialThemeBuilder};
 use once_cell::sync::Lazy;
 
+pub mod icons {
+    pub const FERRIS: &[u8] = include_bytes!("../ferris.svg");
+    const SETTINGS: &[u8] = include_bytes!("../settings_24px.svg");
+    const SETTINGS_FILLED: &[u8] = include_bytes!("../settings_filled_24px.svg");
+
+    #[must_use]
+    pub const fn settings(filled: bool) -> &'static [u8] {
+        if filled {
+            SETTINGS_FILLED
+        } else {
+            SETTINGS
+        }
+    }
+}
+
 static THEME: Lazy<Scheme> = Lazy::new(|| {
     MaterialThemeBuilder::with_source(Argb::from_u32(0x00FF00))
         .build()

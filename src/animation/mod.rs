@@ -23,33 +23,9 @@ pub mod curves;
 // pub mod tweens;
 
 #[derive(Clone, Copy)]
-pub enum AnimationDirection {
+pub enum TransitionDirection {
     Forward,
     Reverse,
-}
-
-#[derive(PartialEq, Eq, Clone, Copy)]
-pub enum AnimationStatus {
-    Paused,
-    Playing,
-    Completed,
-}
-
-impl AnimationStatus {
-    #[must_use]
-    pub const fn is_paused(&self) -> bool {
-        matches!(self, Self::Paused)
-    }
-
-    #[must_use]
-    pub const fn is_playing(&self) -> bool {
-        matches!(self, Self::Playing)
-    }
-
-    #[must_use]
-    pub const fn is_completed(&self) -> bool {
-        matches!(self, Self::Completed)
-    }
 }
 
 #[derive(Default, PartialEq, Eq)]
@@ -75,7 +51,7 @@ impl Context {
 }
 
 #[derive(PartialEq, Clone, Copy)]
-pub struct Animation {
+pub struct Transition {
     context: Memo<Context>,
     is_running: Signal<bool>,
     has_run_yet: Signal<bool>,
@@ -83,7 +59,7 @@ pub struct Animation {
     task: Signal<Option<Task>>,
 }
 
-impl Animation {
+impl Transition {
     pub fn set<K: AsRef<str>, V: Into<TweenValue>>(&self, key: K, value: V) {
         let context = self.context.peek();
         let mut tween = *context.tweens.get(key.as_ref()).unwrap();
@@ -92,7 +68,7 @@ impl Animation {
     }
 
     #[must_use]
-    pub fn get<K: AsRef<str>, V: From<TweenValue>>(&self, key: K) -> V {
+    pub fn get<V: From<TweenValue>>(&self, key: impl AsRef<str>) -> V {
         self.context
             .read()
             .tweens
@@ -156,7 +132,10 @@ impl Animation {
                 let is_finished = values.values().all(|value| value.peek().is_done(index));
 
                 if is_finished {
-                    // if OnFinish::Reverse == on_finish {
+                    for value in values.values_mut() {
+                        value.write().advance(index as f32);
+                    }
+                        // if OnFinish::Reverse == on_finish {
                     //     // Toggle direction
                     //     direction.toggle();
                     // }
@@ -194,7 +173,7 @@ impl Animation {
     }
 }
 
-pub fn use_animation(run: impl Fn(&mut Context) + 'static) -> Animation {
+pub fn use_transition(run: impl Fn(&mut Context) + 'static) -> Transition {
     let platform = use_platform();
     let is_running = use_signal(|| false);
     let has_run_yet = use_signal(|| false);
@@ -208,7 +187,7 @@ pub fn use_animation(run: impl Fn(&mut Context) + 'static) -> Animation {
         context
     });
 
-    Animation {
+    Transition {
         context,
         is_running,
         has_run_yet,
@@ -291,14 +270,14 @@ impl From<TweenValue> for f32 {
 #[allow(clippy::fallible_impl_from)]
 impl From<&str> for TweenValue {
     fn from(value: &str) -> Self {
-        Self::Color(Color::parse_value(value).unwrap())
+        Self::Color(Color::parse(value).unwrap())
     }
 }
 
 #[allow(clippy::fallible_impl_from)]
 impl From<String> for TweenValue {
     fn from(value: String) -> Self {
-        Self::Color(Color::parse_value(value.as_str()).unwrap())
+        Self::Color(Color::parse(value.as_str()).unwrap())
     }
 }
 

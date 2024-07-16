@@ -2,7 +2,7 @@ use freya::prelude::*;
 
 use crate::{
     material::ripple::Ripple,
-    util::{Direction, WithSpacing},
+    util::{Direction, WithSpacing, ColorConversion},
     THEME,
 };
 
@@ -11,6 +11,8 @@ fn NavigationRailItem() -> Element {
     rsx! {
         rect {
             height: "56",
+            main_align: "center",
+            cross_align: "center",
 
             rect {
                 width: "56",
@@ -20,15 +22,15 @@ fn NavigationRailItem() -> Element {
                 main_align: "center",
                 cross_align: "center",
                 background: "{THEME.secondary_container}",
+                overflow: "clip",
 
                 rect {
                     position: "absolute",
-                    position_left: "-28",
                     height: "32",
                     width: "56",
 
                     Ripple {
-                        color: "{THEME.on_secondary_container}",
+                        color: "{THEME.on_secondary_container.to_rgb()}",
                         height: "32",
                         width: "56",
                     }
@@ -59,6 +61,8 @@ pub fn NavigationRail() -> Element {
             height: "100%",
             width: "80",
             background: "{THEME.surface_container_highest}",
+            main_align: "center",
+            cross_align: "center",
 
             WithSpacing {
                 spacing: 12,

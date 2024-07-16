@@ -284,9 +284,9 @@ dependencies = [
 
 [[package]]
 name = "async-executor"
-version = "1.12.0"
+version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8828ec6e544c02b0d6691d21ed9f9218d0384a82542855073c2a3f58304aaf0"
+checksum = "d7ebdfa2ebdab6b1760375fa7d6f382b9f486eac35fc994625a00e89280bdbb7"
 dependencies = [
  "async-task",
  "concurrent-queue",
@@ -726,13 +726,12 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.1.2"
+version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47de7e88bbbd467951ae7f5a6f34f70d1b4d9cfce53d5fd70f74ebe118b3db56"
+checksum = "324c74f2155653c90b04f25b2a47a8a631360cb908f92a772695f430c7e31052"
 dependencies = [
  "jobserver",
  "libc",
- "once_cell",
 ]
 
 [[package]]
@@ -1634,7 +1633,6 @@ dependencies = [
 [[package]]
 name = "freya"
 version = "0.2.2"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "dioxus",
  "dioxus-core",
@@ -1658,7 +1656,6 @@ dependencies = [
 [[package]]
 name = "freya-common"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -1674,7 +1671,6 @@ dependencies = [
 [[package]]
 name = "freya-components"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "bytes",
  "dioxus",
@@ -1697,7 +1693,6 @@ dependencies = [
 [[package]]
 name = "freya-core"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "accesskit",
  "dioxus-core",
@@ -1719,7 +1714,6 @@ dependencies = [
 [[package]]
 name = "freya-devtools"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "dioxus",
  "dioxus-radio",
@@ -1739,7 +1733,6 @@ dependencies = [
 [[package]]
 name = "freya-elements"
 version = "0.2.0"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "dioxus-core",
  "dioxus-rsx",
@@ -1751,7 +1744,6 @@ dependencies = [
 [[package]]
 name = "freya-engine"
 version = "0.2.2"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "bitflags 2.6.0",
  "glutin",
@@ -1761,7 +1753,6 @@ dependencies = [
 [[package]]
 name = "freya-hooks"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "bitflags 2.6.0",
  "bytes",
@@ -1786,7 +1777,6 @@ dependencies = [
 [[package]]
 name = "freya-native-core"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "anymap",
  "dashmap",
@@ -1800,7 +1790,6 @@ dependencies = [
 [[package]]
 name = "freya-native-core-macro"
 version = "0.2.0"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "quote",
  "syn 2.0.71",
@@ -1809,7 +1798,6 @@ dependencies = [
 [[package]]
 name = "freya-node-state"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "accesskit",
  "bytes",
@@ -1829,7 +1817,6 @@ dependencies = [
 [[package]]
 name = "freya-renderer"
 version = "0.2.1"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -3467,7 +3454,7 @@ checksum = "1e401f977ab385c9e4e3ab30627d6f26d00e2c73eef317493c4ec6d468726cf8"
 dependencies = [
  "cfg-if",
  "libc",
- "redox_syscall 0.5.2",
+ "redox_syscall 0.5.3",
  "smallvec",
  "windows-targets 0.52.6",
 ]
@@ -3818,9 +3805,9 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
-version = "0.5.2"
+version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c82cf8cff14456045f55ec4241383baeff27af886adb72ffb2162f99911de0fd"
+checksum = "2a908a6e00f1fdd0dfd9c0eb08ce85126f6d8bbda50017e74bc4a4b7d4a926a4"
 dependencies = [
  "bitflags 2.6.0",
 ]
@@ -3899,9 +3886,9 @@ dependencies = [
 
 [[package]]
 name = "rgb"
-version = "0.8.44"
+version = "0.8.45"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1aee83dc281d5a3200d37b299acd13b81066ea126a7f16f0eae70fc9aed241d9"
+checksum = "ade4539f42266ded9e755c605bdddf546242b2c961b03b06a7375260788a0523"
 dependencies = [
  "bytemuck",
 ]
@@ -4078,9 +4065,9 @@ dependencies = [
 
 [[package]]
 name = "security-framework"
-version = "2.11.0"
+version = "2.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c627723fd09706bacdb5cf41499e95098555af3c3c29d014dc3c458ef6be11c0"
+checksum = "897b2245f0b511c87893af39b033e5ca9cce68824c4d7e7630b5a1d339658d02"
 dependencies = [
  "bitflags 2.6.0",
  "core-foundation",
@@ -4091,9 +4078,9 @@ dependencies = [
 
 [[package]]
 name = "security-framework-sys"
-version = "2.11.0"
+version = "2.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "317936bbbd05227752583946b9e66d7ce3b489f84e11a94a510b4437fef407d7"
+checksum = "75da29fe9b9b08fe9d6b22b5b4bcbc75d8db3aa31e639aa56bb62e9d46bfceaf"
 dependencies = [
  "core-foundation-sys",
  "libc",
@@ -4722,7 +4709,6 @@ dependencies = [
 [[package]]
 name = "torin"
 version = "0.2.0"
-source = "git+https://github.com/Aiving/freya.git?branch=feat/rethink-parsing#75d69927447d84f3279a91e8fa88e5a3c5c94d6e"
 dependencies = [
  "euclid",
  "freya-native-core",
